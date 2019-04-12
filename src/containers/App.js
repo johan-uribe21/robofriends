@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
-import Scroll from '../components/Scroll'
-import './App.css'
+import Scroll from '../components/Scroll';
+import ErrorBoundary from '../components/ErrorBoundary';
+import './App.css';
 
-const state = {
-  
-}
 
 class App extends Component {
   constructor() {
@@ -34,9 +32,11 @@ class App extends Component {
   
   render(){
     const {robots, searchfield} = this.state;
+    // this updates the robot list every time onSearchChange updates the searchfield in state.
     const filteredRobots = robots.filter(robot =>{
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
+    
     return !robots.length ? // ternary statement
       <h1>Loading</h1> :
       (
@@ -44,7 +44,9 @@ class App extends Component {
           <h1 className = 'f2'>RoboFriends</h1>
           <SearchBox searchChange = {this.onSearchChange}/>
           <Scroll>
-            <CardList robots = {filteredRobots} /> 
+            <ErrorBoundary>
+              <CardList robots = {filteredRobots} /> 
+            </ErrorBoundary>
           </Scroll>
         </div>
       );
