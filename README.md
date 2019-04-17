@@ -1,6 +1,6 @@
 ## Summary
 
-Simple app that populates the frame with 'robot' cards, fetched from a publicly available API. Users may search through the list of robots for a particular robot. The robot cards is automatically filtered as the user types. State is managed with redux. 
+Simple app that populates the frame with 'robot' cards, fetched from a publicly available API. Users may search through the list of robots for a particular robot. The robot cards are automatically filtered as the user types. State is managed with redux. 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
