@@ -1,48 +1,52 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
 import './App.css';
+import {setSearchField, requestRobots} from '../actions';
 
+
+const mapStateToProps = state => {
+  return {
+    // it is now state.searchRobots.searchField because that is the props I am passing in index.js
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error
+  }
+}
+
+// the dispatch is what sends the actions object to the reducer
+// we get dispatch from redux
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onRequestRobots: () => dispatch(requestRobots())
+  }
+}
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      robots: [],
-      searchfield: '',
-    }
-  }
-
 
   componentDidMount(){
-    // fetch users, parse the json, then update the state with the new users.
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => this.setState({robots: users}));
+    this.props.onRequestRobots();
   } 
-
-  // use arrow function here to make sure 'this' is here, not in SearchBox input.
-  // arrow functions make "this" refer to where the function was created, not called.
-  onSearchChange = (event) => {
-    //changes state so that the searchfield gets updated as you type.
-    this.setState({ searchfield: event.target.value }); 
-  }
   
   render(){
-    const {robots, searchfield} = this.state;
+
+    const {searchField, onSearchChange, robots, isPending} = this.props;
     // this updates the robot list every time onSearchChange updates the searchfield in state.
     const filteredRobots = robots.filter(robot =>{
-      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+      return robot.name.toLowerCase().includes(searchField.toLowerCase());
     });
     
-    return !robots.length ? // ternary statement
+    return isPending ? // ternary statement
       <h1>Loading</h1> :
       (
         <div className = 'tc'>
           <h1 className = 'f2'>RoboFriends</h1>
-          <SearchBox searchChange = {this.onSearchChange}/>
+          <SearchBox searchChange = {onSearchChange}/>
           <Scroll>
             <ErrorBoundary>
               <CardList robots = {filteredRobots} /> 
@@ -53,4 +57,5 @@ class App extends Component {
   }
 };
 
-export default App;
+// tells the component to suscribe to changes in the store
+export default connect(mapStateToProps, mapDispatchToProps)(App);
