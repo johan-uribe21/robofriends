@@ -1,15 +1,15 @@
 {
-  "main.css": "/robofriends/./static/css/main.d060dd0c.chunk.css",
-  "main.js": "/robofriends/./static/js/main.f4b45a8f.chunk.js",
-  "main.js.map": "/robofriends/./static/js/main.f4b45a8f.chunk.js.map",
-  "runtime~main.js": "/robofriends/./static/js/runtime~main.f743fd61.js",
-  "runtime~main.js.map": "/robofriends/./static/js/runtime~main.f743fd61.js.map",
-  "static/css/2.8daa575c.chunk.css": "/robofriends/./static/css/2.8daa575c.chunk.css",
-  "static/js/2.ae53b63a.chunk.js": "/robofriends/./static/js/2.ae53b63a.chunk.js",
-  "static/js/2.ae53b63a.chunk.js.map": "/robofriends/./static/js/2.ae53b63a.chunk.js.map",
-  "index.html": "/robofriends/./index.html",
-  "precache-manifest.94c555b71d81a8a8de16fddbed2fba38.js": "/robofriends/./precache-manifest.94c555b71d81a8a8de16fddbed2fba38.js",
-  "service-worker.js": "/robofriends/./service-worker.js",
-  "static/css/2.8daa575c.chunk.css.map": "/robofriends/./static/css/2.8daa575c.chunk.css.map",
-  "static/css/main.d060dd0c.chunk.css.map": "/robofriends/./static/css/main.d060dd0c.chunk.css.map"
+  "main.css": "/robofriends/static/css/main.d060dd0c.chunk.css",
+  "main.js": "/robofriends/static/js/main.98f7d7f6.chunk.js",
+  "main.js.map": "/robofriends/static/js/main.98f7d7f6.chunk.js.map",
+  "runtime~main.js": "/robofriends/static/js/runtime~main.fb41d28d.js",
+  "runtime~main.js.map": "/robofriends/static/js/runtime~main.fb41d28d.js.map",
+  "static/css/2.8daa575c.chunk.css": "/robofriends/static/css/2.8daa575c.chunk.css",
+  "static/js/2.ae53b63a.chunk.js": "/robofriends/static/js/2.ae53b63a.chunk.js",
+  "static/js/2.ae53b63a.chunk.js.map": "/robofriends/static/js/2.ae53b63a.chunk.js.map",
+  "index.html": "/robofriends/index.html",
+  "precache-manifest.2b490822e54d3569dd7bc55de2d2eafa.js": "/robofriends/precache-manifest.2b490822e54d3569dd7bc55de2d2eafa.js",
+  "service-worker.js": "/robofriends/service-worker.js",
+  "static/css/2.8daa575c.chunk.css.map": "/robofriends/static/css/2.8daa575c.chunk.css.map",
+  "static/css/main.d060dd0c.chunk.css.map": "/robofriends/static/css/main.d060dd0c.chunk.css.map"
 }
